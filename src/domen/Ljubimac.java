@@ -9,6 +9,6 @@ package domen;
  *
  * @author Ivana
  */
-public class Vrsta {
+public class Ljubimac {
     
 }

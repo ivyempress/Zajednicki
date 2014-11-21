@@ -5,10 +5,16 @@
  */
 package domen;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Ivana
  */
-public class Drzava {
+public class Drzava implements Serializable{
+    
+    int drzavaID;
+    String nazivDrzave;
+    String kontinent;
     
 }
