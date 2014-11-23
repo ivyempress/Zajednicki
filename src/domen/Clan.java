@@ -14,9 +14,9 @@ import java.util.List;
  *
  * @author Ivana
  */
-public class Clan implements Serializable{
-    
-    private int clanID;
+public class Clan implements Serializable {
+
+    private String jmbg;
     private String ime;
     private String prezime;
     private String zanimanje;
@@ -33,8 +33,8 @@ public class Clan implements Serializable{
         this.listaLjubimaca = new ArrayList<>();
     }
 
-    public Clan(int clanID, String ime, String prezime, String zanimanje, String email, Date datumRodjenja, Date datumUclanjenja, Organizacija organizacija, Grad drzava, List<Ljubimac> listaLjubimaca) {
-        this.clanID = clanID;
+    public Clan(String jmbg, String ime, String prezime, String zanimanje, String email, Date datumRodjenja, Date datumUclanjenja, Organizacija organizacija, Grad drzava, List<Ljubimac> listaLjubimaca) {
+        this.jmbg = jmbg;
         this.ime = ime;
         this.prezime = prezime;
         this.zanimanje = zanimanje;
@@ -44,6 +44,14 @@ public class Clan implements Serializable{
         this.organizacija = organizacija;
         this.drzava = drzava;
         this.listaLjubimaca = listaLjubimaca;
+    }
+
+    public String getJmbg() {
+        return jmbg;
+    }
+
+    public void setJmbg(String jmbg) {
+        this.jmbg = jmbg;
     }
 
     public List<Ljubimac> getListaLjubimaca() {
@@ -68,14 +76,6 @@ public class Clan implements Serializable{
 
     public void setDrzava(Grad drzava) {
         this.drzava = drzava;
-    }
-
-    public int getClanID() {
-        return clanID;
-    }
-
-    public void setClanID(int clanID) {
-        this.clanID = clanID;
     }
 
     public String getIme() {
@@ -128,10 +128,7 @@ public class Clan implements Serializable{
 
     @Override
     public String toString() {
-        return ime+prezime;
+        return ime + prezime;
     }
 
-   
-         
-    
 }
