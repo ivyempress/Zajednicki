@@ -19,8 +19,6 @@ public class Clan implements Serializable {
     private String jmbg;
     private String ime;
     private String prezime;
-    private String zanimanje;
-    private String email;
     private Date datumRodjenja;
     private Date datumUclanjenja;
     private Organizacija organizacija;
@@ -37,8 +35,6 @@ public class Clan implements Serializable {
         this.jmbg = jmbg;
         this.ime = ime;
         this.prezime = prezime;
-        this.zanimanje = zanimanje;
-        this.email = email;
         this.datumRodjenja = datumRodjenja;
         this.datumUclanjenja = datumUclanjenja;
         this.organizacija = organizacija;
@@ -92,22 +88,6 @@ public class Clan implements Serializable {
 
     public void setPrezime(String prezime) {
         this.prezime = prezime;
-    }
-
-    public String getZanimanje() {
-        return zanimanje;
-    }
-
-    public void setZanimanje(String zanimanje) {
-        this.zanimanje = zanimanje;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public Date getDatumRodjenja() {
