@@ -41,6 +41,9 @@ public class Konstante {
     public static final String ERROR_LISTA_ORGANIZACIJA = "Greska";
     public static final String OK_LISTA_ORGANIZACIJA = "Uspesno ucitana lista";
     
+    public static final String ERROR_LISTA_GRADOVA = "Greska";
+    public static final String OK_LISTA_GRADOVA = "Uspesno ucitana lista";
+    
     
 
 }

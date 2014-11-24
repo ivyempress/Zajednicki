@@ -6,12 +6,16 @@
 package domen;
 
 import java.io.Serializable;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author Ivana
  */
-public class Grad implements Serializable{
+public class Grad implements Serializable, OpstiDomenskiObjekat{
     
     private int gradID;
     private String nazivGrada;
@@ -53,6 +57,65 @@ public class Grad implements Serializable{
     @Override
     public String toString() {
         return nazivGrada;
+    }
+
+    @Override
+    public String vratiNazivTabele() {
+return "Grad";
+    }
+
+    @Override
+    public String vratiInsert() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<OpstiDomenskiObjekat> vratiListu(ResultSet rs) throws Exception {
+            List<OpstiDomenskiObjekat> lista = new ArrayList<>();
+        while(rs.next()) {
+            int gradID = rs.getInt(1);
+            String nazivGrada = rs.getString(2);
+            String drzava = rs.getString(3);
+            Grad grad = new Grad(gradID, nazivGrada, drzava);
+            lista.add(grad);
+        }
+        return lista;
+    }
+
+    @Override
+    public String vratiNazivKolone() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String vratiSifru() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public OpstiDomenskiObjekat vratiObjekat(ResultSet rs) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String vratiInsert2() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String uslov() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String uslov2() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String uslov3() {
+
+        return "";
     }
     
     
