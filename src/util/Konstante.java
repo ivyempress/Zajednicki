@@ -27,7 +27,7 @@ public class Konstante {
     public static final int PRETRAZI_CLANOVE = 21;
     public static final int KRAJ = 100;
 
-    public static final String VRATI_MESTA_OK = "Uspesno ucitana mesta!";
+    public static final String VRATI_ORGANIZACIJE_OK = "Uspesno ucitane organizacije!";
     public static final String VRATI_MESTA_ERROR = "Neuspesno ucitana mesta!";
     public static final String SACUVAJ_POLAZNIKA_OK = "Polaznik je uspesno sacuvan.";
     public static final String IZMENI_POLAZNIKA_OK = "Polaznik je uspesno izmenjen.";
@@ -36,5 +36,10 @@ public class Konstante {
     public static final String OBRISI_KURS_OK = "Kurs je uspesno obrisan.";
     public static final String IZMENI_KURS_OK = "Kurs je uspesno izmenjen.";
     public static final String SACUVAJ_RACUN_OK = "Racun je uspesno sacuvan.";
+    
+    public static final String ERROR_LISTA_ORGANIZACIJA = "Greska";
+    public static final String OK_LISTA_ORGANIZACIJA = "Uspesno ucitana lista";
+    
+    
 
 }

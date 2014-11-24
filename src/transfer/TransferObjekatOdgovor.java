@@ -4,23 +4,23 @@ package transfer;
 import java.io.Serializable;
 
 public class TransferObjekatOdgovor implements Serializable{
-    private Object odgovor;
-    private String rezultat;
+    private String odgovor;
+    private Object rezultat;
     private Object izuzetak;
 
-    public Object getOdgovor() {
+    public String getOdgovor() {
         return odgovor;
     }
 
-    public void setOdgovor(Object odgovor) {
+    public void setOdgovor(String odgovor) {
         this.odgovor = odgovor;
     }
 
-    public String getRezultat() {
+    public Object getRezultat() {
         return rezultat;
     }
 
-    public void setRezultat(String rezultat) {
+    public void setRezultat(Object rezultat) {
         this.rezultat = rezultat;
     }
 
@@ -31,6 +31,6 @@ public class TransferObjekatOdgovor implements Serializable{
     public void setIzuzetak(Object izuzetak) {
         this.izuzetak = izuzetak;
     }
-    
-    
+
+ 
 }

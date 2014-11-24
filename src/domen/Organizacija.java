@@ -6,13 +6,16 @@
 package domen;
 
 import java.io.Serializable;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
  * @author Ivana
  */
-public class Organizacija implements Serializable{
+public class Organizacija implements Serializable, OpstiDomenskiObjekat{
     private int organizacijaID;
     private String nazivOrganizacije;
     private String imeOsnivaca;
@@ -75,6 +78,67 @@ public class Organizacija implements Serializable{
     @Override
     public String toString() {
         return nazivOrganizacije;
+    }
+
+    @Override
+    public String vratiNazivTabele() {
+        return "Organizacija";
+    }
+
+    @Override
+    public String vratiInsert() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<OpstiDomenskiObjekat> vratiListu(ResultSet rs) throws Exception {
+        List<OpstiDomenskiObjekat> lista = new ArrayList<>();
+        while(rs.next()) {
+            int organizacijaID = rs.getInt(1);
+            String nazivOrganizacije = rs.getString(2);
+            String imeOsnivaca = rs.getString(3);
+            Date datumOsnivanja = rs.getDate(4);
+            String opisDelatnosti = rs.getString(5);
+            Organizacija org = new Organizacija(organizacijaID, nazivOrganizacije, imeOsnivaca, datumOsnivanja, opisDelatnosti);
+            
+            lista.add(org);
+        }
+        return lista;
+    }
+
+    @Override
+    public String vratiNazivKolone() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String vratiSifru() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public OpstiDomenskiObjekat vratiObjekat(ResultSet rs) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String vratiInsert2() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String uslov() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String uslov2() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String uslov3() {
+return "";
     }
     
     
