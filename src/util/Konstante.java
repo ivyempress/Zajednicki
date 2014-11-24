@@ -23,8 +23,9 @@ public class Konstante {
     public static final int OBRISI_CLANA = 18;
     public static final int OBRISI_LJUBIMCA = 19;
     public static final int VRATI_ID_LJUBIMCA = 20;
+      public static final int VRATI_SVE_GRADOVE = 21;
 
-    public static final int PRETRAZI_CLANOVE = 21;
+    public static final int PRETRAZI_CLANOVE = 22;
     public static final int KRAJ = 100;
 
     public static final String VRATI_ORGANIZACIJE_OK = "Uspesno ucitane organizacije!";
