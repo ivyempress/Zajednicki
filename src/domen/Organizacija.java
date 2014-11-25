@@ -7,9 +7,11 @@ package domen;
 
 import java.io.Serializable;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import sun.java2d.pipe.SpanShapeRenderer;
 
 /**
  *
@@ -92,7 +94,9 @@ public class Organizacija implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String vratiInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String datum = sdf.format(datumOsnivanja);
+         return "'"+organizacijaID+"', '"+nazivOrganizacije+"', '"+imeOsnivaca+"', '"+datum+"', '"+opisDelatnosti+"'";
     }
 
     @Override
@@ -113,7 +117,7 @@ public class Organizacija implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String vratiNazivKolone() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "organizacijaID";
     }
 
     @Override
