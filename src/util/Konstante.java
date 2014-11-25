@@ -7,6 +7,7 @@ public class Konstante {
     public static final int SACUVAJ_ORGANIZACIJU = 3;
     public static final int OBRISI_ORGANIZACIJU = 4;
     public static final int IZMENI_ORGANIZACIJU = 5;
+    public static final int PRETRAZI_ORGANIZACIJE = 23;
 
     public static final int SACUVAJ_ZIVOTINJU = 6;
     public static final int VRATI_ID_ZIVOTINJE = 7;

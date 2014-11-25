@@ -15,7 +15,8 @@ import java.util.List;
  *
  * @author Ivana
  */
-public class Organizacija implements Serializable, OpstiDomenskiObjekat{
+public class Organizacija implements Serializable, OpstiDomenskiObjekat {
+
     private int organizacijaID;
     private String nazivOrganizacije;
     private String imeOsnivaca;
@@ -32,7 +33,11 @@ public class Organizacija implements Serializable, OpstiDomenskiObjekat{
 
     public Organizacija() {
     }
-    
+
+    public Organizacija(String nazivOrganizacije, String imeOsnivaca) {
+        this.nazivOrganizacije = nazivOrganizacije;
+        this.imeOsnivaca = imeOsnivaca;
+    }
     
 
     public int getOrganizacijaID() {
@@ -93,14 +98,14 @@ public class Organizacija implements Serializable, OpstiDomenskiObjekat{
     @Override
     public List<OpstiDomenskiObjekat> vratiListu(ResultSet rs) throws Exception {
         List<OpstiDomenskiObjekat> lista = new ArrayList<>();
-        while(rs.next()) {
+        while (rs.next()) {
             int organizacijaID = rs.getInt(1);
             String nazivOrganizacije = rs.getString(2);
             String imeOsnivaca = rs.getString(3);
             Date datumOsnivanja = rs.getDate(4);
             String opisDelatnosti = rs.getString(5);
             Organizacija org = new Organizacija(organizacijaID, nazivOrganizacije, imeOsnivaca, datumOsnivanja, opisDelatnosti);
-            
+
             lista.add(org);
         }
         return lista;
@@ -128,7 +133,7 @@ public class Organizacija implements Serializable, OpstiDomenskiObjekat{
 
     @Override
     public String uslov() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return " WHERE nazivOrganizacije LIKE '"+nazivOrganizacije+"%' OR imeOsnivaca LIKE '"+imeOsnivaca+"%'";
     }
 
     @Override
@@ -138,10 +143,7 @@ public class Organizacija implements Serializable, OpstiDomenskiObjekat{
 
     @Override
     public String uslov3() {
-return "";
+        return "";
     }
-    
-    
-    
-    
+
 }
