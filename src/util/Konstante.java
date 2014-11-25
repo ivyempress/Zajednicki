@@ -16,6 +16,7 @@ public class Konstante {
     public static final int IZMENI_ZIVOTINJU = 10;
 
     public static final int VRATI_SVE_CLANOVE = 11;
+    
     public static final int VRATI_SVE_LJUBIMCE = 13;
     public static final int SACUVAJ_CLANA = 14;
     public static final int SACUVAJ_LJUBIMCA = 15;
