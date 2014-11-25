@@ -93,7 +93,7 @@ public class Organizacija implements Serializable, OpstiDomenskiObjekat {
     }
 
     @Override
-    public String vratiInsert() {
+    public String vratiParametreZaInsert() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String datum = sdf.format(datumOsnivanja);
          return "'"+organizacijaID+"', '"+nazivOrganizacije+"', '"+imeOsnivaca+"', '"+datum+"', '"+opisDelatnosti+"'";
@@ -116,13 +116,13 @@ public class Organizacija implements Serializable, OpstiDomenskiObjekat {
     }
 
     @Override
-    public String vratiNazivKolone() {
+    public String vratiNazivKolonePrimarnogKljuca() {
         return "organizacijaID";
     }
 
     @Override
     public String vratiSifru() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return String.valueOf(organizacijaID);
     }
 
     @Override
@@ -131,8 +131,10 @@ public class Organizacija implements Serializable, OpstiDomenskiObjekat {
     }
 
     @Override
-    public String vratiInsert2() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String vratiParametreZaUpdate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String datum = sdf.format(datumOsnivanja);
+        return "nazivOrganizacije = '"+nazivOrganizacije+"', imeOsnivaca = '"+imeOsnivaca+"', datumOsnivanja = '"+datum+"', opisDelatnosti = '"+opisDelatnosti+"'";
     }
 
     @Override

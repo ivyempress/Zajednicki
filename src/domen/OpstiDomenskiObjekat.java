@@ -19,17 +19,17 @@ public interface OpstiDomenskiObjekat {
 
     public String vratiNazivTabele();
 
-    public String vratiInsert();
+    public String vratiParametreZaInsert();
 
     public List<OpstiDomenskiObjekat> vratiListu(ResultSet rs) throws Exception;
 
-    public String vratiNazivKolone();
+    public String vratiNazivKolonePrimarnogKljuca();
 
     public String vratiSifru();
 
     public OpstiDomenskiObjekat vratiObjekat(ResultSet rs);
 
-    public String vratiInsert2();
+    public String vratiParametreZaUpdate();
 
     public String uslov();
 

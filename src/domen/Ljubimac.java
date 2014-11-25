@@ -86,7 +86,7 @@ public class Ljubimac implements Serializable,OpstiDomenskiObjekat{
     }
 
     @Override
-    public String vratiInsert() {
+    public String vratiParametreZaInsert() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -96,7 +96,7 @@ public class Ljubimac implements Serializable,OpstiDomenskiObjekat{
     }
 
     @Override
-    public String vratiNazivKolone() {
+    public String vratiNazivKolonePrimarnogKljuca() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -111,7 +111,7 @@ public class Ljubimac implements Serializable,OpstiDomenskiObjekat{
     }
 
     @Override
-    public String vratiInsert2() {
+    public String vratiParametreZaUpdate() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

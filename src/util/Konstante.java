@@ -32,6 +32,7 @@ public class Konstante {
 
     public static final String VRATI_ORGANIZACIJE_OK = "Uspesno ucitane organizacije!";
     public static final String SACUVAJ_ORGANIZACIJU_OK = "Uspesno sacuvana organizacija!";
+    public static final String IZMENI_ORGANIZACIJU_OK = "Uspesno izmenjena organizacija!";
     public static final String VRATI_MESTA_ERROR = "Neuspesno ucitana mesta!";
     public static final String SACUVAJ_POLAZNIKA_OK = "Polaznik je uspesno sacuvan.";
     public static final String IZMENI_POLAZNIKA_OK = "Polaznik je uspesno izmenjen.";
