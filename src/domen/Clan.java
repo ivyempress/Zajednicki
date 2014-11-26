@@ -33,7 +33,11 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
         this.listaLjubimaca = new ArrayList<>();
     }
 
-    public Clan(String jmbg, String ime, String prezime, String zanimanje, String email, Date datumRodjenja, Date datumUclanjenja, Organizacija organizacija, Grad drzava, List<Ljubimac> listaLjubimaca) {
+    public Clan(String ime) {
+        this.ime = ime;
+    }
+    
+    public Clan(String jmbg, String ime, String prezime, Date datumRodjenja, Date datumUclanjenja, Organizacija organizacija, Grad drzava) {
         this.jmbg = jmbg;
         this.ime = ime;
         this.prezime = prezime;
@@ -41,7 +45,8 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
         this.datumUclanjenja = datumUclanjenja;
         this.organizacija = organizacija;
         this.drzava = drzava;
-        this.listaLjubimaca = listaLjubimaca;
+        listaLjubimaca = new ArrayList<>();
+
     }
 
     public String getJmbg() {
@@ -115,7 +120,7 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String vratiNazivTabele() {
-        return "Clan";
+        return "Organizacija INNER JOIN (Grad INNER JOIN Clan ON Grad.gradID = Clan.gradID) ON Organizacija.organizacijaID = Clan.organizacijaID";
     }
 
     @Override
@@ -123,22 +128,43 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String datumRodj = sdf.format(datumRodjenja);
         String datumUcla = sdf.format(datumUclanjenja);
-         return "'"+jmbg+"', '"+ime+"', '"+prezime+"', '"+datumRodj+"', '"+datumUcla+"', "+organizacija.getOrganizacijaID()+" , "+ drzava.getGradID();
+        return "'" + jmbg + "', '" + ime + "', '" + prezime + "', '" + datumRodj + "', '" + datumUcla + "', " + organizacija.getOrganizacijaID() + " , " + drzava.getGradID();
     }
 
     @Override
     public List<OpstiDomenskiObjekat> vratiListu(ResultSet rs) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<OpstiDomenskiObjekat> lista = new ArrayList<>();
+        while (rs.next()) {
+            String maticniBroj = rs.getString(9);
+            String imeClana = rs.getString(10);
+            String prezimeClana = rs.getString(11);
+            Date datumrodjenjaClana = rs.getDate(12);
+            Date datumUclanjenjaClana = rs.getDate(13);
+            int organizacijaIDD = rs.getInt(1);
+            String nazivGrada = rs.getString(7);
+            int gradIDD = rs.getInt(6);
+            String nazivOrganizacije = rs.getString(2);
+            Organizacija o = new Organizacija();
+            o.setOrganizacijaID(organizacijaIDD);
+            o.setNazivOrganizacije(nazivOrganizacije);
+            Grad g = new Grad();
+            g.setGradID(gradIDD);
+            g.setNazivGrada(nazivGrada);
+            Clan c = new Clan(maticniBroj, imeClana, prezimeClana, datumrodjenjaClana, datumUclanjenjaClana, o, g);
+
+            lista.add(c);
+        }
+        return lista;
     }
 
     @Override
     public String vratiNazivKolonePrimarnogKljuca() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "jmbg";
     }
 
     @Override
     public String vratiSifru() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return jmbg;
     }
 
     @Override
@@ -153,7 +179,7 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String uslov() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return " WHERE ime LIKE '"+ime+"%' OR prezime LIKE '"+ime+"%'";
     }
 
     @Override
@@ -164,6 +190,11 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
     @Override
     public String uslov3() {
         return "";
+    }
+
+    @Override
+    public String vratiNazivTabeleZaBrisanje() {
+        return "Clan";
     }
 
 }

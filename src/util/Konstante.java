@@ -41,6 +41,7 @@ public class Konstante {
     public static final String OBRISI_ZIVOTINJU_OK = "Uspesno obrisana zivotinja";
     
     public static final String SACUVAJ_CLANA_OK = "Uspesno sacuvan clan!";
+    public static final String OBRISI_CLANA_OK = "Uspesno obrisan clan!";
 
     public static final String ERROR_LISTA_CLANOVA = "Greska, lista clanova ne moze da se ucita";
     public static final String OK_LISTA_CLANOVA = "Uspesno ucitana lista clanova";
@@ -54,4 +55,6 @@ public class Konstante {
     public static final String ERROR_ID_ORGANIZACIJE = "Greska, sistem ne moze vratiti ID organizacije";
     public static final String ERROR_LISTA_GRADOVA = "Greska, lista gradova ne moze da se ucita";
     public static final String OK_LISTA_GRADOVA = "Uspesno ucitana lista gradova";
+    public static final String ERROR_LISTA_LJUBIMACA = "Greska, lista ljubimaca ne moze da se ucita";
+    public static final String OK_LISTA_LJUBIMACA = "Uspesno ucitana lista ljubimaca";
 }

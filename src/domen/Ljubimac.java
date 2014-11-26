@@ -8,6 +8,7 @@ package domen;
 import java.io.Serializable;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -26,6 +27,10 @@ public class Ljubimac implements Serializable, OpstiDomenskiObjekat {
     public Ljubimac() {
         this.vlasnik = new Clan();
         this.vrstaZivotinje = new Zivotinja();
+    }
+
+    public Ljubimac(String imeLjubimca) {
+        this.imeLjubimca = imeLjubimca;
     }
 
     public Ljubimac(int ljubimacID, Clan vlasnik, String imeLjubimca, Date datumSpasavanja, Zivotinja vrstaZivotinje) {
@@ -90,12 +95,27 @@ public class Ljubimac implements Serializable, OpstiDomenskiObjekat {
     public String vratiParametreZaInsert() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String datumSpas = sdf.format(datumSpasavanja);
-        return "'" + vlasnik.getJmbg() + "', " + ljubimacID + ", '" + imeLjubimca + "', '" + datumSpas + "', " +vrstaZivotinje.getZivotinjaID();
+        return "'" + vlasnik.getJmbg() + "', " + ljubimacID + ", '" + imeLjubimca + "', '" + datumSpas + "', " + vrstaZivotinje.getZivotinjaID();
     }
 
     @Override
     public List<OpstiDomenskiObjekat> vratiListu(ResultSet rs) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<OpstiDomenskiObjekat> lista = new ArrayList<>();
+        while (rs.next()) {
+            String maticniBroja = rs.getString(1);
+            int id = rs.getInt(2);
+            String ime = rs.getString(3);
+            Date datum = rs.getDate(4);
+            int idZiv = rs.getInt(5);
+            Ljubimac ljub = new Ljubimac();
+            ljub.setDatumSpasavanja(datum);
+            ljub.setImeLjubimca(ime);
+            ljub.setLjubimacID(id);
+            
+
+            lista.add(ljub);
+        }
+        return lista;
     }
 
     @Override
@@ -120,7 +140,7 @@ public class Ljubimac implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String uslov() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return " WHERE jmbg = ";
     }
 
     @Override
@@ -130,7 +150,12 @@ public class Ljubimac implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String uslov3() {
-        return "";
+        return "'" + imeLjubimca + "'";
+    }
+
+    @Override
+    public String vratiNazivTabeleZaBrisanje() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
