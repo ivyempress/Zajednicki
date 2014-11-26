@@ -78,9 +78,10 @@ public class Zivotinja implements Serializable , OpstiDomenskiObjekat{
 
     @Override
     public String vratiNazivKolonePrimarnogKljuca() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
+        return "zivotinjaID";
+    }
+    
     @Override
     public String vratiSifru() {
       return String.valueOf(zivotinjaID);
