@@ -81,7 +81,7 @@ public class Zivotinja implements Serializable , OpstiDomenskiObjekat{
 
         return "zivotinjaID";
     }
-    
+   
     @Override
     public String vratiSifru() {
       return String.valueOf(zivotinjaID);
