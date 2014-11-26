@@ -62,12 +62,13 @@ public class Zivotinja implements Serializable , OpstiDomenskiObjekat{
 
     @Override
     public String vratiNazivTabele() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        return "Zivotinja";
     }
 
     @Override
     public String vratiParametreZaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "'"+zivotinjaID+"', '"+naziv+"', '"+opisVrste+"'";
     }
 
     @Override
@@ -82,7 +83,7 @@ public class Zivotinja implements Serializable , OpstiDomenskiObjekat{
 
     @Override
     public String vratiSifru() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      return String.valueOf(zivotinjaID);
     }
 
     @Override
