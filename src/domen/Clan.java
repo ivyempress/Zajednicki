@@ -7,6 +7,7 @@ package domen;
 
 import java.io.Serializable;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -119,7 +120,10 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String vratiParametreZaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String datumRodj = sdf.format(datumRodjenja);
+        String datumUcla = sdf.format(datumUclanjenja);
+         return "'"+jmbg+"', '"+ime+"', '"+prezime+"', '"+datumRodj+"', '"+datumUcla+"', "+organizacija.getOrganizacijaID()+" , "+ drzava.getGradID();
     }
 
     @Override
@@ -159,7 +163,7 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String uslov3() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "";
     }
 
 }

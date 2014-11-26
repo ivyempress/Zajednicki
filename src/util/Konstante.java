@@ -39,6 +39,8 @@ public class Konstante {
     public static final String SACUVAJ_ZIVOTINJU_OK = "Uspesno sacuvana zivotinja!";
     public static final String IZMENI_ZIVOTINJU_OK = "Uspesno izmenjena zivotinja!";
     public static final String OBRISI_ZIVOTINJU_OK = "Uspesno obrisana zivotinja";
+    
+    public static final String SACUVAJ_CLANA_OK = "Uspesno sacuvan clan!";
 
     public static final String ERROR_LISTA_CLANOVA = "Greska, lista clanova ne moze da se ucita";
     public static final String OK_LISTA_CLANOVA = "Uspesno ucitana lista clanova";

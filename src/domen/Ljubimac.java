@@ -7,6 +7,7 @@ package domen;
 
 import java.io.Serializable;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -14,8 +15,8 @@ import java.util.List;
  *
  * @author Ivana
  */
-public class Ljubimac implements Serializable,OpstiDomenskiObjekat{
-    
+public class Ljubimac implements Serializable, OpstiDomenskiObjekat {
+
     private int ljubimacID;
     private Clan vlasnik;
     private String imeLjubimca;
@@ -82,12 +83,14 @@ public class Ljubimac implements Serializable,OpstiDomenskiObjekat{
 
     @Override
     public String vratiNazivTabele() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Ljubimac";
     }
 
     @Override
     public String vratiParametreZaInsert() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String datumSpas = sdf.format(datumSpasavanja);
+        return "'" + vlasnik.getJmbg() + "', " + ljubimacID + ", '" + imeLjubimca + "', '" + datumSpas + "', " +vrstaZivotinje.getZivotinjaID();
     }
 
     @Override
@@ -127,10 +130,7 @@ public class Ljubimac implements Serializable,OpstiDomenskiObjekat{
 
     @Override
     public String uslov3() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "";
     }
-    
-    
-    
-    
+
 }
