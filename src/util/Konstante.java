@@ -34,24 +34,22 @@ public class Konstante {
     public static final String SACUVAJ_ORGANIZACIJU_OK = "Uspesno sacuvana organizacija!";
     public static final String IZMENI_ORGANIZACIJU_OK = "Uspesno izmenjena organizacija!";
     public static final String OBRISI_ORGANIZACIJU_OK = "Uspesno obrisana organizacija";
-    
+
     public static final String VRATI_ZIVOTINJE_OK = "Uspesno ucitane zivotinje!";
     public static final String SACUVAJ_ZIVOTINJU_OK = "Uspesno sacuvana zivotinja!";
     public static final String IZMENI_ZIVOTINJU_OK = "Uspesno izmenjena zivotinja!";
     public static final String OBRISI_ZIVOTINJU_OK = "Uspesno obrisana zivotinja";
-    
-    public static final String VRATI_MESTA_ERROR = "Neuspesno ucitana mesta!";
-    public static final String SACUVAJ_POLAZNIKA_OK = "Polaznik je uspesno sacuvan.";
-    public static final String IZMENI_POLAZNIKA_OK = "Polaznik je uspesno izmenjen.";
-    public static final String OBRISI_POLAZNIKA_OK = "Polaznik je uspesno obrisan.";
-    public static final String SACUVAJ_KURS_OK = "Kurs je uspesno sacuvan.";
-    public static final String OBRISI_KURS_OK = "Kurs je uspesno obrisan.";
-    public static final String IZMENI_KURS_OK = "Kurs je uspesno izmenjen.";
-    public static final String SACUVAJ_RACUN_OK = "Racun je uspesno sacuvan.";
 
-    public static final String ERROR_LISTA = "Greska, lista ne moze da se ucita";
-    public static final String OK_LISTA = "Uspesno ucitana lista";
-
- 
-
+    public static final String ERROR_LISTA_CLANOVA = "Greska, lista clanova ne moze da se ucita";
+    public static final String OK_LISTA_CLANOVA = "Uspesno ucitana lista clanova";
+    public static final String ERROR_LISTA_ZIVOTINJA = "Greska, lista zivotinja ne moze da se ucita";
+    public static final String OK_LISTA_ZIVOTINJA = "Uspesno ucitana lista zivotinja";
+    public static final String OK_ID_ZIVOTINJE = "Uspesno vracen ID zivotinje";
+    public static final String ERROR_ID_ZIVOTINJE = "Greska, sistem ne moze vratiti ID zivotinje";
+    public static final String ERROR_LISTA_ORGANIZACIJA = "Greska, lista organizacija ne moze da se ucita";
+    public static final String OK_LISTA_ORGANIZACIJA = "Uspesno ucitana lista organizacija";
+    public static final String OK_ID_ORGANIZACIJE = "Uspesno vracen ID organizacije";
+    public static final String ERROR_ID_ORGANIZACIJE = "Greska, sistem ne moze vratiti ID organizacije";
+    public static final String ERROR_LISTA_GRADOVA = "Greska, lista gradova ne moze da se ucita";
+    public static final String OK_LISTA_GRADOVA = "Uspesno ucitana lista gradova";
 }

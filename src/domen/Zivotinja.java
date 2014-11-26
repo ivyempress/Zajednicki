@@ -7,14 +7,15 @@ package domen;
 
 import java.io.Serializable;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author Ivana
  */
-public class Zivotinja implements Serializable , OpstiDomenskiObjekat{
-    
+public class Zivotinja implements Serializable, OpstiDomenskiObjekat {
+
     private int zivotinjaID;
     private String naziv;
     private String opisVrste;
@@ -22,10 +23,10 @@ public class Zivotinja implements Serializable , OpstiDomenskiObjekat{
     public Zivotinja() {
     }
 
-    public Zivotinja(int zivotinjaID, String naziv, String vrstaZivotinje, String opisVrste) {
+    public Zivotinja(int zivotinjaID, String naziv, String opisVrste) {
         this.zivotinjaID = zivotinjaID;
         this.naziv = naziv;
-        
+
         this.opisVrste = opisVrste;
     }
 
@@ -53,8 +54,6 @@ public class Zivotinja implements Serializable , OpstiDomenskiObjekat{
         this.naziv = naziv;
     }
 
-
-
     @Override
     public String toString() {
         return naziv;
@@ -68,12 +67,20 @@ public class Zivotinja implements Serializable , OpstiDomenskiObjekat{
 
     @Override
     public String vratiParametreZaInsert() {
-        return "'"+zivotinjaID+"', '"+naziv+"', '"+opisVrste+"'";
+        return "'" + zivotinjaID + "', '" + naziv + "', '" + opisVrste + "'";
     }
 
     @Override
     public List<OpstiDomenskiObjekat> vratiListu(ResultSet rs) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<OpstiDomenskiObjekat> lista = new ArrayList<>();
+        while (rs.next()) {
+            int ID = rs.getInt(1);
+            String nazivZivotinje = rs.getString(2);
+            String opis = rs.getString(3);
+            Zivotinja zivotinja = new Zivotinja(ID, nazivZivotinje, opis);
+            lista.add(zivotinja);
+        }
+        return lista;
     }
 
     @Override
@@ -81,10 +88,10 @@ public class Zivotinja implements Serializable , OpstiDomenskiObjekat{
 
         return "zivotinjaID";
     }
-   
+
     @Override
     public String vratiSifru() {
-      return String.valueOf(zivotinjaID);
+        return String.valueOf(zivotinjaID);
     }
 
     @Override
@@ -109,9 +116,7 @@ public class Zivotinja implements Serializable , OpstiDomenskiObjekat{
 
     @Override
     public String uslov3() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "";
     }
-    
-    
-    
+
 }
