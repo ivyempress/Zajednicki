@@ -115,7 +115,7 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String toString() {
-        return ime + prezime;
+        return ime +" "+ prezime;
     }
 
     @Override
@@ -194,6 +194,11 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String vratiNazivTabeleZaBrisanje() {
+        return "Clan";
+    }
+
+    @Override
+    public String vratiNazivTabeleZaInsert() {
         return "Clan";
     }
 

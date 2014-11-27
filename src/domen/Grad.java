@@ -120,6 +120,11 @@ return "Grad";
 
     @Override
     public String vratiNazivTabeleZaBrisanje() {
+       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public String vratiNazivTabeleZaInsert() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

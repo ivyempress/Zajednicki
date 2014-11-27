@@ -32,6 +32,8 @@ public interface OpstiDomenskiObjekat {
     public String vratiParametreZaUpdate();
     
     public String vratiNazivTabeleZaBrisanje();
+    
+    public String vratiNazivTabeleZaInsert();
 
     public String uslov();
 
