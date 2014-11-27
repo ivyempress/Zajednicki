@@ -101,7 +101,9 @@ public class Zivotinja implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String vratiParametreZaUpdate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+return "naziv = '"+naziv+"', opisVrste = '"+opisVrste+"'";
+  
+    
     }
 
     @Override
