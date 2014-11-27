@@ -30,6 +30,11 @@ public class Zivotinja implements Serializable, OpstiDomenskiObjekat {
         this.opisVrste = opisVrste;
     }
 
+    public Zivotinja(String naziv) {
+        this.naziv = naziv;
+    }
+    
+
     public String getOpisVrste() {
         return opisVrste;
     }
@@ -107,7 +112,7 @@ public class Zivotinja implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String uslov() {
-     return " WHERE naziv LIKE '"+naziv+"%' OR opisVrste LIKE '"+opisVrste+"%'";
+     return " WHERE naziv LIKE '"+naziv+"%'";
     }
 
     @Override
