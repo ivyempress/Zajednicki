@@ -14,6 +14,7 @@ public class Konstante {
     public static final int VRATI_SVE_ZIVOTINJE = 8;
     public static final int OBRISI_ZIVOTINJU = 9;
     public static final int IZMENI_ZIVOTINJU = 10;
+       public static final int PRETRAZI_ZIVOTINJE =24 ;
 
     public static final int VRATI_SVE_CLANOVE = 11;
 
@@ -57,4 +58,5 @@ public class Konstante {
     public static final String OK_LISTA_GRADOVA = "Uspesno ucitana lista gradova";
     public static final String ERROR_LISTA_LJUBIMACA = "Greska, lista ljubimaca ne moze da se ucita";
     public static final String OK_LISTA_LJUBIMACA = "Uspesno ucitana lista ljubimaca";
+ 
 }

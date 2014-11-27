@@ -101,14 +101,13 @@ public class Zivotinja implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String vratiParametreZaUpdate() {
-return "naziv = '"+naziv+"', opisVrste = '"+opisVrste+"'";
-  
-    
+        return "naziv = '" + naziv + "', opisVrste = '" + opisVrste + "'";
+
     }
 
     @Override
     public String uslov() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     return " WHERE naziv LIKE '"+naziv+"%' OR opisVrste LIKE '"+opisVrste+"%'";
     }
 
     @Override
@@ -123,7 +122,7 @@ return "naziv = '"+naziv+"', opisVrste = '"+opisVrste+"'";
 
     @Override
     public String vratiNazivTabeleZaBrisanje() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "Zivotinja";
     }
 
     @Override
