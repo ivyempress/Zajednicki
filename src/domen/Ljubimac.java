@@ -88,7 +88,7 @@ public class Ljubimac implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String vratiNazivTabele() {
-        return "Ljubimac";
+        return "Zivotinja INNER JOIN Ljubimac ON Zivotinja.zivotinjaID = Ljubimac.zivotinjaID";
     }
 
     @Override
@@ -102,16 +102,22 @@ public class Ljubimac implements Serializable, OpstiDomenskiObjekat {
     public List<OpstiDomenskiObjekat> vratiListu(ResultSet rs) throws Exception {
         List<OpstiDomenskiObjekat> lista = new ArrayList<>();
         while (rs.next()) {
-            String maticniBroja = rs.getString(1);
-            int id = rs.getInt(2);
-            String ime = rs.getString(3);
-            Date datum = rs.getDate(4);
-            int idZiv = rs.getInt(5);
+            String maticniBroja = rs.getString(4);
+            int id = rs.getInt(5);
+            String ime = rs.getString(6);
+            Date datum = rs.getDate(7);
+            int idZiv = rs.getInt(1);
+            String nazivZivotinje = rs.getString(2);
+            String opisZivotinje = rs.getString(3);
+            Zivotinja z = new Zivotinja();
+            z.setZivotinjaID(idZiv);
+            z.setNaziv(nazivZivotinje);
+            z.setOpisVrste(opisZivotinje);
             Ljubimac ljub = new Ljubimac();
             ljub.setDatumSpasavanja(datum);
             ljub.setImeLjubimca(ime);
             ljub.setLjubimacID(id);
-            
+            ljub.setVrstaZivotinje(z);
 
             lista.add(ljub);
         }
@@ -161,6 +167,11 @@ public class Ljubimac implements Serializable, OpstiDomenskiObjekat {
     @Override
     public String vratiNazivTabeleZaInsert() {
         return "Ljubimac";
+    }
+
+    @Override
+    public String vratiNazivTabeleZaUpdate() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

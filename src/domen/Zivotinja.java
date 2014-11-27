@@ -135,4 +135,9 @@ public class Zivotinja implements Serializable, OpstiDomenskiObjekat {
         return "Zivotinja";
     }
 
+    @Override
+    public String vratiNazivTabeleZaUpdate() {
+        return "Zivotinja";
+    }
+
 }

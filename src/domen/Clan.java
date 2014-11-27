@@ -36,7 +36,7 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
     public Clan(String ime) {
         this.ime = ime;
     }
-    
+
     public Clan(String jmbg, String ime, String prezime, Date datumRodjenja, Date datumUclanjenja, Organizacija organizacija, Grad drzava) {
         this.jmbg = jmbg;
         this.ime = ime;
@@ -115,7 +115,7 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String toString() {
-        return ime +" "+ prezime;
+        return ime + " " + prezime;
     }
 
     @Override
@@ -174,12 +174,16 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String vratiParametreZaUpdate() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String datumRodj = sdf.format(datumRodjenja);
+        String datumUcl = sdf.format(datumUclanjenja);
+        return "ime = '" + ime + "', prezime = '" + prezime + "', datumRodjenja = '" + datumRodj + "', datumUclanjenja = '" + datumUcl + "', organizacijaID = " + organizacija.getOrganizacijaID() + ", gradID = "+drzava.getGradID();
+
     }
 
     @Override
     public String uslov() {
-        return " WHERE ime LIKE '"+ime+"%' OR prezime LIKE '"+ime+"%'";
+        return " WHERE ime LIKE '" + ime + "%' OR prezime LIKE '" + ime + "%'";
     }
 
     @Override
@@ -199,6 +203,11 @@ public class Clan implements Serializable, OpstiDomenskiObjekat {
 
     @Override
     public String vratiNazivTabeleZaInsert() {
+        return "Clan";
+    }
+
+    @Override
+    public String vratiNazivTabeleZaUpdate() {
         return "Clan";
     }
 

@@ -14,7 +14,7 @@ public class Konstante {
     public static final int VRATI_SVE_ZIVOTINJE = 8;
     public static final int OBRISI_ZIVOTINJU = 9;
     public static final int IZMENI_ZIVOTINJU = 10;
-       public static final int PRETRAZI_ZIVOTINJE =24 ;
+    public static final int PRETRAZI_ZIVOTINJE = 24;
 
     public static final int VRATI_SVE_CLANOVE = 11;
 
@@ -36,14 +36,16 @@ public class Konstante {
     public static final String IZMENI_ORGANIZACIJU_OK = "Uspesno izmenjena organizacija!";
     public static final String OBRISI_ORGANIZACIJU_OK = "Uspesno obrisana organizacija";
 
+    public static final String IZMENI_CLANA_OK = "Uspesno izmenjen clan";
+
     public static final String VRATI_ZIVOTINJE_OK = "Uspesno ucitane zivotinje!";
     public static final String SACUVAJ_ZIVOTINJU_OK = "Uspesno sacuvana zivotinja!";
     public static final String IZMENI_ZIVOTINJU_OK = "Uspesno izmenjena zivotinja!";
     public static final String OBRISI_ZIVOTINJU_OK = "Uspesno obrisana zivotinja";
-    
+
     public static final String SACUVAJ_CLANA_OK = "Uspesno sacuvan clan!";
     public static final String OBRISI_CLANA_OK = "Uspesno obrisan clan!";
-
+    public static final String SACUVAJ_LJUBIMCA_OK = "Uspesno sacuvan ljubimac!";
     public static final String ERROR_LISTA_CLANOVA = "Greska, lista clanova ne moze da se ucita";
     public static final String OK_LISTA_CLANOVA = "Uspesno ucitana lista clanova";
     public static final String ERROR_LISTA_ZIVOTINJA = "Greska, lista zivotinja ne moze da se ucita";
@@ -58,5 +60,5 @@ public class Konstante {
     public static final String OK_LISTA_GRADOVA = "Uspesno ucitana lista gradova";
     public static final String ERROR_LISTA_LJUBIMACA = "Greska, lista ljubimaca ne moze da se ucita";
     public static final String OK_LISTA_LJUBIMACA = "Uspesno ucitana lista ljubimaca";
- 
+
 }

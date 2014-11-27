@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package domen;
-
 
 import java.sql.ResultSet;
 
@@ -30,10 +28,12 @@ public interface OpstiDomenskiObjekat {
     public OpstiDomenskiObjekat vratiObjekat(ResultSet rs);
 
     public String vratiParametreZaUpdate();
-    
+
     public String vratiNazivTabeleZaBrisanje();
-    
+
     public String vratiNazivTabeleZaInsert();
+
+    public String vratiNazivTabeleZaUpdate();
 
     public String uslov();
 

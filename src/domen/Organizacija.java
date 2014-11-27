@@ -162,4 +162,9 @@ public class Organizacija implements Serializable, OpstiDomenskiObjekat {
         
     }
 
+    @Override
+    public String vratiNazivTabeleZaUpdate() {
+        return "Organizacija";
+    }
+
 }
